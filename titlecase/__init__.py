@@ -64,7 +64,8 @@ def titlecase(text):
                     word = word.lower()
             if APOS_SECOND.match(word):
                 word = word.replace(word[0], word[0].upper(), 1)
-                word = word.replace(word[2], word[2].upper(), 1)
+                if len(word) > 2:
+                    word = word.replace(word[2], word[2].upper(), 1)
                 tc_line.append(word)
                 continue
             if INLINE_PERIOD.search(word) or UC_ELSEWHERE.match(word):
@@ -113,4 +114,3 @@ def titlecase(text):
         processed.append(result)
 
     return "\n".join(processed)
-
