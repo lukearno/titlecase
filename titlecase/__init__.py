@@ -12,7 +12,7 @@ import re, string
 __all__ = ['titlecase']
 __version__ = '0.5.2'
 
-SMALL = 'a|an|and|as|at|but|by|en|for|if|in|of|or|the|to|v\.?|via|vs\.?'
+SMALL = 'a|an|and|as|at|but|by|en|for|from|if|in|of|or|the|to|v\.?|via|vs\.?'
 PUNCT = r"""!"#$%&'‘()*+,\-./:;?@[\\\]_`{|}~"""
 SMALL_WORDS = re.compile(r'^(%s)$' % SMALL, re.I)
 INLINE_PERIOD = re.compile(r'[a-z][.][a-z]', re.I)
