@@ -1,15 +1,15 @@
 import os
 import sys
 
+here = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, here)
 from ez_setup import use_setuptools
 use_setuptools()
 
 from setuptools import setup, find_packages
 
-here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README')).read()
 
-sys.path.insert(0, here)
 
 from titlecase import __version__
 
