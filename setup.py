@@ -1,20 +1,13 @@
 import os
 import sys
 
-from ez_setup import use_setuptools
-use_setuptools()
-
 from setuptools import setup, find_packages
 
-here = os.path.abspath(os.path.dirname(__file__))
-README = open(os.path.join(here, 'README')).read()
-
-sys.path.insert(0, here)
-
-from titlecase import __version__
+with open('README') as readme:
+    README = readme.read()
 
 setup(name='titlecase',
-    version=__version__,
+    version='99.9.9',
     description="Python Port of John Gruber's titlecase.pl",
     long_description=README,
     classifiers=[
@@ -34,8 +27,5 @@ setup(name='titlecase',
     include_package_data=True,
     zip_safe=False,
     tests_require=['nose'],
-    test_suite="titlecase.tests",
-    entry_points = """\
-    """
-)
+    test_suite="titlecase.tests")
 
